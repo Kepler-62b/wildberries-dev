@@ -282,15 +282,6 @@ abstract class Wildberries
      */
     protected function isExecuteEnvironment(): bool
     {
-        if(false === ($this->identifier instanceof WbTokenUid))
-        {
-            $this->logger->critical('Не указан идентификатор токена через вызов метода forTokenIdentifier', [self::class.':'.__LINE__]);
-
-            throw new InvalidArgumentException(
-                'Не указан идентификатор токена через вызов метода forTokenIdentifier: ->forTokenIdentifier($WbTokenUid)',
-            );
-        }
-
         return $this->environment === 'prod';
     }
 
